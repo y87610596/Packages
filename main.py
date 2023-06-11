@@ -1,11 +1,10 @@
 current_package_weight = 0
 shipped_packages = 0
 item_number = 0
+max_items = int(input("Please enter the maximum number of items to be shipped: "))
 
 
-print("You can only send up to 10 items!!")
-
-while True:
+while item_number < max_items:
     item_weight = float(input("Please enter the weight (kg) of the item. A single item should be 1-10kg: "))
 
     if item_weight == 0:
@@ -17,10 +16,6 @@ while True:
         continue
 
     item_number = item_number + 1
-    if item_number == 11:
-        print(f"You have shipped {shipped_packages} packages")
-        break
-
     current_package_weight = current_package_weight + item_weight
 
     if current_package_weight > 20:
@@ -29,6 +24,6 @@ while True:
 
     print(f"Weight of current package is {current_package_weight} kg.")
     print(f"{shipped_packages} packages have been shipped.")
-
+print(f"You have shipped {shipped_packages} packages")
 
 
